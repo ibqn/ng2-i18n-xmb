@@ -9,8 +9,8 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-        "typeRoots": [
-      "node_modules/@types/"
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
 
@@ -21,6 +21,6 @@
 
   "angularCompilerOptions": {
     "genDir": "aot",
-    "skipMetadataEmit" : true
+    "skipMetadataEmit": true
   }
 }
