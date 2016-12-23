@@ -11,5 +11,14 @@
   <body>
     <my-app>Loading...</my-app>
   </body>
-  <script src="dist/build.js"></script>
+  <script type="text/javascript">
+    (function() {
+        var s, l;
+        l = localStorage.getItem('lang') || 'en';
+        s = document.createElement('script');
+        s.async = true;
+        s.src = 'dist/build.' + l + '.js';
+        document.body.appendChild(s);
+    })();
+  </script>
 </html>
