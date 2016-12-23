@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" ",
-    "build:aot": "ngc -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js",
+    "build:aot": "for l in 'en' 'de' 'ru'; do ngc --i18nFile=./locale/messages.$l.xtb --locale=$l --i18nFormat=xtb -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.$l.js; done",
     "lite:aot": "lite-server -c aot/bs-config.js",
     "lite": "lite-server -c bs-config.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "i18n": "ng-xi18n  --i18nFormat=xmb"
+    "i18n": "ng-xi18n  --i18nFormat=xmb",
+    "i18n:aot:de": "ngc --i18nFile=./locale/messages.de.xtb --locale=de --i18nFormat=xtb -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.de.js",
+    "i18n:aot:en": "ngc --i18nFile=./locale/messages.en.xtb --locale=en --i18nFormat=xtb -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.en.js",
+    "i18n:aot:ru": "ngc --i18nFile=./locale/messages.ru.xtb --locale=ru --i18nFormat=xtb -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.ru.js"
   },
   "repository": "github:ibqn/ng2-i18n-xmb.git",
   "dependencies": {
