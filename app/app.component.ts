@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-        //this.toggleLocale();
         this.locale = localStorage.getItem('lang') || 'en';
     }
 }
