@@ -8,7 +8,7 @@ var log = require('connect-logger');
 module.exports = {
     port: 8000,
     injectChanges: false, // workaround for Angular 2 styleUrls loading
-    filters: ['./**/*.{html,htm,css,js,xmb}'],
+    filters: ['./**/*.{html,htm,css,js,xtb}'],
     watchOptions: {
         ignored: 'node_modules'
     },
