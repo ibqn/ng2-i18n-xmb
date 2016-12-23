@@ -8,11 +8,6 @@ import { Component, OnInit, NgZone } from '@angular/core';
 })
 export class AppComponent implements OnInit {
     locale:string;
-    locales = [
-        { name: 'english', lang: 'en' },
-        { name: 'russian', lang: 'ru' },
-        { name: 'german' , lang: 'de' },
-    ];
 
     constructor(private zone: NgZone) {}
 
